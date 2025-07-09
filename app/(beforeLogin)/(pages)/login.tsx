@@ -1,16 +1,22 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router';
+'use client';
+import { useState, ChangeEvent, FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import { FaEnvelope, FaEye, FaEyeSlash } from 'react-icons/fa';
 
+interface Errors {
+  email?: string;
+  password?: string;
+}
+
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [errors, setErrors] = useState<Errors>({});
   const router = useRouter();
 
   // Validation functions
-  const validateEmail = (value) => {
+  const validateEmail = (value: string): string => {
     if (!value) return 'Email is required.';
     // Simple email regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -18,7 +24,7 @@ export default function Login() {
     return '';
   };
 
-  const validatePassword = (value) => {
+  const validatePassword = (value: string): string => {
     if (!value) return 'Password is required.';
     if (value.length < 8) return 'Password must be at least 8 characters.';
     if (!/[A-Z]/.test(value)) return 'Password must have at least one uppercase letter.';
@@ -29,17 +35,17 @@ export default function Login() {
   };
 
   // Handle input changes and validation
-  const handleEmailChange = (e) => {
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
     setErrors((prev) => ({ ...prev, email: validateEmail(e.target.value) }));
   };
 
-  const handlePasswordChange = (e) => {
+  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
     setErrors((prev) => ({ ...prev, password: validatePassword(e.target.value) }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const emailError = validateEmail(email);
     const passwordError = validatePassword(password);
@@ -58,7 +64,7 @@ export default function Login() {
       <div className="bg-green-600 p-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <img src="/mpesa-logo.png" alt="M-PESA" className="h-8" />
-          <span className="text-white font-bold text-lg">Safaricom</span>
+          <img src="/safaricom-logo.jpg" alt="Safaricom" className="h-7" />
         </div>
         <div className="space-x-4 hidden sm:flex">
           <button className="text-white font-semibold">APPLY</button>
@@ -125,24 +131,14 @@ export default function Login() {
             <a href="#" className="text-green-600 text-sm font-semibold hover:underline">FORGOT PASSWORD?</a>
           </div>
         </div>
-        {/* Right Side Icons (hidden on mobile) */}
+        {/* Right Side Image (hidden on mobile) */}
         <div className="hidden md:flex flex-col items-center justify-center flex-1">
-          <div className="flex flex-col items-center space-y-6">
-            <div className="bg-green-100 rounded-full p-6 border-4 border-green-400">
-              <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="green"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </div>
-            <div className="flex space-x-4">
-              <div className="bg-blue-100 rounded-full p-4">
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="blue"><rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="2" /></svg>
-              </div>
-              <div className="bg-red-100 rounded-full p-4">
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="red"><circle cx="12" cy="12" r="10" strokeWidth="2" /></svg>
-              </div>
-              <div className="bg-blue-100 rounded-full p-4">
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="blue"><rect x="6" y="6" width="12" height="12" rx="2" strokeWidth="2" /></svg>
-              </div>
-            </div>
-          </div>
+          <img 
+            src="/bg.png" 
+            alt="M-PESA Features" 
+            className="w-90 h-90 object-contain" 
+            style={{ maxWidth: '90vw', height: 'auto' }}
+          />
         </div>
       </div>
     </div>
