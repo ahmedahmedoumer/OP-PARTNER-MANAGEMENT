@@ -34,3 +34,33 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Screenshots
+
+### 1. Stepper Navigation and Merchant Check
+
+![Step 1 - Check Merchant](public/images/1.png)
+
+---
+
+### 2. Distribution Detail
+
+![Step 2 - Distribution Detail](public/images/2.png)
+
+---
+
+### 3. Business Type Selection
+
+![Step 3 - Business Type](public/images/3.png)
+
+---
+
+### 4. Business Detail Entry
+
+![Step 4 - Business Detail](public/images/4.png)
+
+---
+
+### 5. Fund Withdraw Setup
+
+![Step 5 - Fund Withdraw](public/images/5.png)
