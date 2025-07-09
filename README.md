@@ -39,28 +39,28 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ### 1. Stepper Navigation and Merchant Check
 
-![Step 1 - Check Merchant](public/images/1.png)
+![Step 1 - Check Merchant](https://raw.githubusercontent.com/ahmedahmedoumer/OP-PARTNER-MANAGEMENT/master/public/images/1.png)
 
 ---
 
 ### 2. Distribution Detail
 
-![Step 2 - Distribution Detail](public/images/2.png)
+![Step 2 - Distribution Detail](https://raw.githubusercontent.com/ahmedahmedoumer/OP-PARTNER-MANAGEMENT/master/public/images/2.png)
 
 ---
 
 ### 3. Business Type Selection
 
-![Step 3 - Business Type](public/images/3.png)
+![Step 3 - Business Type](https://raw.githubusercontent.com/ahmedahmedoumer/OP-PARTNER-MANAGEMENT/master/public/images/3.png)
 
 ---
 
 ### 4. Business Detail Entry
 
-![Step 4 - Business Detail](public/images/4.png)
+![Step 4 - Business Detail](https://raw.githubusercontent.com/ahmedahmedoumer/OP-PARTNER-MANAGEMENT/master/public/images/4.png)
 
 ---
 
 ### 5. Fund Withdraw Setup
 
-![Step 5 - Fund Withdraw](public/images/5.png)
+![Step 5 - Fund Withdraw](https://raw.githubusercontent.com/ahmedahmedoumer/OP-PARTNER-MANAGEMENT/master/public/images/5.png)
